@@ -5,12 +5,17 @@ from src.extensions import jwt
 from src.database.models import User
 from src.database.db import async_session
 from src.configs import config
-
-app = Quart(__name__)
+from quart_cors import cors
 
 
 def create_app(config_name="dev"):
+
+    app = Quart(__name__)
+    
     app.config.from_object(config[config_name])
+
+    # cors
+    app = cors(app, allow_origin="*")
 
     jwt.init_app(app)
 
