@@ -11,7 +11,7 @@ from quart_cors import cors
 def create_app(config_name="dev"):
 
     app = Quart(__name__)
-    
+
     app.config.from_object(config[config_name])
 
     # cors
