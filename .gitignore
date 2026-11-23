@@ -1,4 +1,4 @@
 app2.py
 .gitignore
-node_modules
 config.bat
+node_modules
